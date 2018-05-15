@@ -1,0 +1,28 @@
+#name:读取Excel
+#author:Yangwenwu
+#@Time:2018/4/16 14:18
+import csv
+
+def read(path):
+    list1 = []
+    with open(path,"r",errors="ignore") as f:
+        w = csv.reader(f)
+        for i in w:
+            list1.append(i)
+    return list1
+# print(read("excelt.csv"))
+def writew (path,infoe):
+    with open (path,"a",newline="") as h:
+        writ = csv.writer(h)
+        for info in infoe:
+            writ.writerow(info)
+
+'''
+需求：1自建一个csv文件，学生信息，name，age,score id
+打印学生信息 
+
+'''
+writew("student.csv",[['name','age','score','id'],['lili','12','99','12'],['kk','23','55','13'],['rtrt','34','55','14'],['oioi','23','45','15']])
+
+
+
